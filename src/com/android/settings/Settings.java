@@ -95,6 +95,7 @@ import com.android.settings.wifi.WifiSettings;
 import com.android.settings.wifi.p2p.WifiP2pSettings;
 import com.android.settings.ScreenshotSetting;
 import com.android.settings.HdmiControllerActivity;
+import com.android.settings.UserInterface;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -323,9 +324,10 @@ public class Settings extends PreferenceActivity
         TetherSettings.class.getName(),
         WifiP2pSettings.class.getName(),
         VpnSettings.class.getName(),
-	HdmiControllerActivity.class.getName(),
-	ScreenshotSetting.class.getName(),
-	HomeSettings.class.getName(),
+	    HdmiControllerActivity.class.getName(),
+	    ScreenshotSetting.class.getName(),
+        UserInterface.class.getName(),
+	    HomeSettings.class.getName(),
         DateTimeSettings.class.getName(),
         LocalePicker.class.getName(),
         InputMethodAndLanguageSettings.class.getName(),
