@@ -11,4 +11,9 @@
         android:title="@string/immersive_sb"
         />
 
+    <CheckBoxPreference
+        android:key="media_mode"
+        android:title="@string/media_mode"
+        />
+
 </PreferenceScreen>

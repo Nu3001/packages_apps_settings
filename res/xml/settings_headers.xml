@@ -85,7 +85,7 @@
     <!-- User Interface -->
     <header
         android:id="@+id/ui_settings"
-        android:icon="@drawable/ic_settings_display"
+        android:icon="@drawable/ic_settings_multiuser"
         android:fragment="com.android.settings.UserInterface"
         android:title="@string/ui_settings" />
     <!--HDMI-->

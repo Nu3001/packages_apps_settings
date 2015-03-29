@@ -5017,4 +5017,5 @@
     <string name="ui_settings">"User Interface"</string>
     <string name="immersive_nav">"Immersive Mode (Navbar)"</string>
     <string name="immersive_sb">"Immersive Mode (Statusbar)"</string>
+    <string name="media_mode">"Media buttons in Navbar"</string>
 </resources>
