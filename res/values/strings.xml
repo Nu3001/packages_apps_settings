@@ -5013,9 +5013,4 @@
 		 <string name="set_resolution_failed_message">Failed to change display mode.</string>
 		 <string name="dlg_confirm_reboot_title">Reboot</string>
 		 <string name="dlg_confirm_reboot_text">System will reboot to change display mode.</string>
-
-    <string name="ui_settings">"User Interface"</string>
-    <string name="immersive_nav">"Immersive Mode (Navbar)"</string>
-    <string name="immersive_sb">"Immersive Mode (Statusbar)"</string>
-    <string name="media_mode">"Media buttons in Navbar"</string>
 </resources>
