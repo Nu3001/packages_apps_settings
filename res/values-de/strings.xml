@@ -1026,8 +1026,8 @@
     <string name="location_access_title" msgid="7064108942964081243">"Zugriff auf meinen Standort"</string>
     <string name="location_access_summary" msgid="69031404093194341">"Meine Standortdaten dürfen von Apps verwendet werden, die ich dazu berechtigt habe."</string>
     <string name="location_sources_heading" msgid="1278732419851088319">"Standortquellen"</string>
-    <string name="about_settings" product="tablet" msgid="593457295516533765">"Über das Tablet"</string>
-    <string name="about_settings" product="default" msgid="1743378368185371685">"Über das Telefon"</string>
+    <string name="about_settings" product="tablet" msgid="593457295516533765">"Über"</string>
+    <string name="about_settings" product="default" msgid="1743378368185371685">"Über"</string>
     <string name="about_settings_summary" msgid="3371517697156165959">"Rechtliche Hinweise, Status und Softwareversion anzeigen"</string>
     <string name="legal_information" msgid="5769301644270604095">"Rechtliche Hinweise"</string>
     <string name="contributors_title" msgid="5917703088825286504">"Mitwirkende"</string>
