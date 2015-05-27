@@ -4971,51 +4971,64 @@
      <string name="ethernet_static_netmask">Netmask</string>
      <string name="ethernet_advanced_mac_address_title">MAC address</string>
      <string name="ethernet_advanced_ip_address_title">IP address</string>
-        <string name="linkage_status_disconnected">Link detected: no. Ethernet is disconnected phisically!</string>
-        <string name="linkage_status_dev_fail">Failed to turn up ethernet device! Is it esistent?</string>
-        <string name="duplex_full">Full</string>
-        <string name="duplex_half">Half</string>
-        <string name="duplex_unknown">Unknown</string>
-        <string name="linkage_status_format">Link detected: yes. Speed:
-        <xliff:g id="number" example="27">%d</xliff:g>Mb/s. Duplex:
-        <xliff:g id="queue_text" example="Queue">%s</xliff:g>.</string>
-        <string name="ip_network_status_connecting">Configing ethernet interface.</string>
-        <string name="ip_network_status_connected">Config ethernet interface successfully.</string>
-        <string name="ip_network_status_failed">Fail to config ethernet interface!</string>
-        <string name="ip_network_status_unavailable">Not available.</string>
-        <string name="eth_ip_settings_please_complete_settings">Please give complete static IP settings!</string>
-        <string name="eth_ip_settings_eth_is_disabled">Ethernet is disabled.</string>
-        <string name="ethernet_static_ip_settings_title">Static IP Setttings</string>
-        <string name="category_ethernet">Static IP Setttings</string>
-        <string name="staticip_save">Save</string>
-        <string name="staticip_cancel">Cancel</string>
-        <string name="str_ok">OK</string>
-        <string name="str_cancel">Cancel</string>
-        <string name="str_about">Important</string>
-        <string name="str_mesg">Whether save Settings?</string>
-        <string name="save_failed">Save failed!</string>
-        <string name="default_static_ip">192.168.1.128</string>
-        <string name="default_static_getway">192.168.1.1</string>
-        <string name="default_static_netmask">255.255.255.0</string>
-        <string name="default_static_dns1">8.8.8.8</string>
-        <string name="default_static_dns2">8.8.4.4</string>
-        
-        <string name="user_experience_category_title">"User Experience Program"</string>
-        <string name="user_experience_title">"User Experience Program"</string>
-        <string name="user_experience_summary">"Help manufacturer improve its product and service by sending diagnostic and usage data."</string>
+    <string name="linkage_status_disconnected">Link detected: no. Ethernet is disconnected phisically!</string>
+    <string name="linkage_status_dev_fail">Failed to turn up ethernet device! Is it esistent?</string>
+    <string name="duplex_full">Full</string>
+    <string name="duplex_half">Half</string>
+    <string name="duplex_unknown">Unknown</string>
+    <string name="linkage_status_format">Link detected: yes. Speed:
+    <xliff:g id="number" example="27">%d</xliff:g>Mb/s. Duplex:
+    <xliff:g id="queue_text" example="Queue">%s</xliff:g>.</string>
+    <string name="ip_network_status_connecting">Configing ethernet interface.</string>
+    <string name="ip_network_status_connected">Config ethernet interface successfully.</string>
+    <string name="ip_network_status_failed">Fail to config ethernet interface!</string>
+    <string name="ip_network_status_unavailable">Not available.</string>
+    <string name="eth_ip_settings_please_complete_settings">Please give complete static IP settings!</string>
+    <string name="eth_ip_settings_eth_is_disabled">Ethernet is disabled.</string>
+    <string name="ethernet_static_ip_settings_title">Static IP Setttings</string>
+    <string name="category_ethernet">Static IP Setttings</string>
+    <string name="staticip_save">Save</string>
+    <string name="staticip_cancel">Cancel</string>
+    <string name="str_ok">OK</string>
+    <string name="str_cancel">Cancel</string>
+    <string name="str_about">Important</string>
+    <string name="str_mesg">Whether save Settings?</string>
+    <string name="save_failed">Save failed!</string>
+    <string name="default_static_ip">192.168.1.128</string>
+    <string name="default_static_getway">192.168.1.1</string>
+    <string name="default_static_netmask">255.255.255.0</string>
+    <string name="default_static_dns1">8.8.8.8</string>
+    <string name="default_static_dns2">8.8.4.4</string>
 
-        <string name="hdmi_connect">HDMI is connected.</string>
-        <string name="hdmi_disconnect">HDMI is disconnected.</string>
+    <string name="user_experience_category_title">"User Experience Program"</string>
+    <string name="user_experience_title">"User Experience Program"</string>
+    <string name="user_experience_summary">"Help manufacturer improve its product and service by sending diagnostic and usage data."</string>
 
-		 <string name="title_resolution">Display mode</string>
-		 <string name="summary_resolution" translatable="false">%1$s</string>
-		 <string name="dialog_title_resolution">Display mode</string>
-		 <string name="set_resolution_failed_message">Failed to change display mode.</string>
-		 <string name="dlg_confirm_reboot_title">Reboot</string>
-		 <string name="dlg_confirm_reboot_text">System will reboot to change display mode.</string>
+    <string name="hdmi_connect">HDMI is connected.</string>
+    <string name="hdmi_disconnect">HDMI is disconnected.</string>
+
+     <string name="title_resolution">Display mode</string>
+     <string name="summary_resolution" translatable="false">%1$s</string>
+     <string name="dialog_title_resolution">Display mode</string>
+     <string name="set_resolution_failed_message">Failed to change display mode.</string>
+     <string name="dlg_confirm_reboot_title">Reboot</string>
+     <string name="dlg_confirm_reboot_text">System will reboot to change display mode.</string>
 
     <string name="ui_settings">"User Interface"</string>
     <string name="immersive_nav">"Immersive Mode (Navbar)"</string>
     <string name="immersive_sb">"Immersive Mode (Statusbar)"</string>
-    <string name="media_mode">"Media buttons in Navbar"</string>
+    <string name="volume_up">"Show Volume Up Button"</string>
+    <string name="volume_down">"Show Volume Down Button"</string>
+    <string name="volume_slider">"Show Volume Slider Button"</string>
+    <string name="music_button">"Show Music Button"</string>
+    <string name="home_clock_button">"Show Home/Clock Button"</string>
+    <string name="navigation_button">"Show Navigation Button"</string>
+    <string name="phone_button">"Show Phone Button"</string>
+    <string name="automotive_button">"Show Automotive Button"</string>
+    <string name="media_prev_button">"Show Media/Prev Button"</string>
+    <string name="media_play_button">"Show Media/Play Button"</string>
+    <string name="media_next_button">"Show Media/Next Button"</string>
+    <string name="hide_home_button">"Hide Stock Home Button"</string>
+    <string name="hide_back_button">"Hide Stock Back Button"</string>
+    <string name="hide_recents_button">"Hide Stock Recents Button"</string>
 </resources>
