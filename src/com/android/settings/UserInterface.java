@@ -24,13 +24,15 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
     private static final String KEY_MEDIA_PREV_BUTTON="media_prev_button";
     private static final String KEY_MEDIA_PLAY_BUTTON="media_play_button";
     private static final String KEY_MEDIA_NEXT_BUTTON="media_next_button";
-    private static final String KEY_HIDE_BACK_BUTTON="hide_back_button";
-    private static final String KEY_HIDE_HOME_BUTTON="hide_home_button";
-    private static final String KEY_HIDE_RECENTS_BUTTON="hide_recents_button";
+    private static final String KEY_SHOW_BACK_BUTTON="show_back_button";
+    private static final String KEY_SHOW_HOME_BUTTON="show_home_button";
+    private static final String KEY_SHOW_RECENTS_BUTTON="show_recents_button";
+    private static final String KEY_ENABLE_HEADS_UP="enable_heads_up";
 
 
 	private CheckBoxPreference mImmersiveStatusbar;
     private CheckBoxPreference mImmersiveNavbar;
+    private CheckBoxPreference mEnableHeadsUp;
     private CheckBoxPreference mVolumeUp;
     private CheckBoxPreference mVolumeDown;
     private CheckBoxPreference mVolumeSlider;
@@ -42,9 +44,9 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
     private CheckBoxPreference mMediaPrev;
     private CheckBoxPreference mMediaPlay;
     private CheckBoxPreference mMediaNext;
-    private CheckBoxPreference mHideBack;
-    private CheckBoxPreference mHideHome;
-    private CheckBoxPreference mHideRecents;
+    private CheckBoxPreference mShowBack;
+    private CheckBoxPreference mShowHome;
+    private CheckBoxPreference mShowRecents;
 
 	private Context mContext;
 
@@ -56,6 +58,7 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
         mContext=getActivity();
         mImmersiveNavbar=(CheckBoxPreference)findPreference(KEY_IMMERSIVE_NAV);
         mImmersiveStatusbar=(CheckBoxPreference)findPreference(KEY_IMMERSIVE_SB);
+        mEnableHeadsUp=(CheckBoxPreference)findPreference(KEY_ENABLE_HEADS_UP);
         mVolumeUp=(CheckBoxPreference)findPreference(KEY_VOLUME_UP);
         mVolumeDown=(CheckBoxPreference)findPreference(KEY_VOLUME_DOWN);
         mVolumeSlider=(CheckBoxPreference)findPreference(KEY_VOLUME_SLIDER);
@@ -67,12 +70,13 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
         mMediaPrev=(CheckBoxPreference)findPreference(KEY_MEDIA_PREV_BUTTON);
         mMediaPlay=(CheckBoxPreference)findPreference(KEY_MEDIA_PLAY_BUTTON);
         mMediaNext=(CheckBoxPreference)findPreference(KEY_MEDIA_NEXT_BUTTON);
-        mHideBack=(CheckBoxPreference)findPreference(KEY_HIDE_BACK_BUTTON);
-        mHideHome=(CheckBoxPreference)findPreference(KEY_HIDE_HOME_BUTTON);
-        mHideRecents=(CheckBoxPreference)findPreference(KEY_HIDE_RECENTS_BUTTON);
+        mShowBack=(CheckBoxPreference)findPreference(KEY_SHOW_BACK_BUTTON);
+        mShowHome=(CheckBoxPreference)findPreference(KEY_SHOW_HOME_BUTTON);
+        mShowRecents=(CheckBoxPreference)findPreference(KEY_SHOW_RECENTS_BUTTON);
         
         mImmersiveNavbar.setOnPreferenceChangeListener(this);
         mImmersiveStatusbar.setOnPreferenceChangeListener(this);
+        mEnableHeadsUp.setOnPreferenceChangeListener(this);
         mVolumeUp.setOnPreferenceChangeListener(this);
         mVolumeDown.setOnPreferenceChangeListener(this);
         mVolumeSlider.setOnPreferenceChangeListener(this);
@@ -84,9 +88,9 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
         mMediaPrev.setOnPreferenceChangeListener(this);
         mMediaPlay.setOnPreferenceChangeListener(this);
         mMediaNext.setOnPreferenceChangeListener(this);
-        mHideBack.setOnPreferenceChangeListener(this);
-        mHideHome.setOnPreferenceChangeListener(this);
-        mHideRecents.setOnPreferenceChangeListener(this);
+        mShowBack.setOnPreferenceChangeListener(this);
+        mShowHome.setOnPreferenceChangeListener(this);
+        mShowRecents.setOnPreferenceChangeListener(this);
 
         boolean checked = Settings.System.getBoolean(
              mContext.getContentResolver(),Settings.System.IMMERSIVE_MODE_NAV, false);
@@ -95,28 +99,31 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
                 mContext.getContentResolver(),Settings.System.IMMERSIVE_MODE_SB, false);
         mImmersiveStatusbar.setChecked(checked);
         checked = Settings.System.getBoolean(
+                mContext.getContentResolver(),Settings.System.ENABLE_HEADS_UP, false);
+        mEnableHeadsUp.setChecked(checked);
+        checked = Settings.System.getBoolean(
                 mContext.getContentResolver(),Settings.System.NAVBAR_SHOW_VOLUME_UP, false);
         mVolumeUp.setChecked(checked);
         checked = Settings.System.getBoolean(
                 mContext.getContentResolver(),Settings.System.NAVBAR_SHOW_VOLUME_DOWN, false);
         mVolumeDown.setChecked(checked);
         checked = Settings.System.getBoolean(
-                mContext.getContentResolver(),Settings.System.NAVBAR_SHOW_VOLUME_SLIDER, false);
+                mContext.getContentResolver(),Settings.System.NAVBAR_SHOW_VOLUME_SLIDER, true);
         mVolumeSlider.setChecked(checked);
         checked = Settings.System.getBoolean(
-                mContext.getContentResolver(),Settings.System.NAVBAR_SHOW_MUSIC, false);
+                mContext.getContentResolver(),Settings.System.NAVBAR_SHOW_MUSIC, true);
         mMusic.setChecked(checked);
         checked = Settings.System.getBoolean(
-                mContext.getContentResolver(),Settings.System.NAVBAR_SHOW_HOME_CLOCK, false);
+                mContext.getContentResolver(),Settings.System.NAVBAR_SHOW_HOME_CLOCK, true);
         mHomeClock.setChecked(checked);
         checked = Settings.System.getBoolean(
-                mContext.getContentResolver(),Settings.System.NAVBAR_SHOW_NAVIGATION, false);
+                mContext.getContentResolver(),Settings.System.NAVBAR_SHOW_NAVIGATION, true);
         mNavigation.setChecked(checked);
         checked = Settings.System.getBoolean(
-                mContext.getContentResolver(),Settings.System.NAVBAR_SHOW_PHONE, false);
+                mContext.getContentResolver(),Settings.System.NAVBAR_SHOW_PHONE, true);
         mPhone.setChecked(checked);
         checked = Settings.System.getBoolean(
-                mContext.getContentResolver(),Settings.System.NAVBAR_SHOW_AUTOMOTIVE, false);
+                mContext.getContentResolver(),Settings.System.NAVBAR_SHOW_AUTOMOTIVE, true);
         mAutomotive.setChecked(checked);
         checked = Settings.System.getBoolean(
                 mContext.getContentResolver(),Settings.System.NAVBAR_SHOW_MEDIA_PREV, false);
@@ -128,14 +135,14 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
                 mContext.getContentResolver(),Settings.System.NAVBAR_SHOW_MEDIA_NEXT, false);
         mMediaNext.setChecked(checked);
         checked = Settings.System.getBoolean(
-                mContext.getContentResolver(),Settings.System.NAVBAR_HIDE_BACK, false);
-        mHideBack.setChecked(checked);
+                mContext.getContentResolver(),Settings.System.NAVBAR_SHOW_BACK, true);
+        mShowBack.setChecked(checked);
         checked = Settings.System.getBoolean(
-                mContext.getContentResolver(),Settings.System.NAVBAR_HIDE_HOME, false);
-        mHideHome.setChecked(checked);
+                mContext.getContentResolver(),Settings.System.NAVBAR_SHOW_HOME, false);
+        mShowHome.setChecked(checked);
         checked = Settings.System.getBoolean(
-                mContext.getContentResolver(),Settings.System.NAVBAR_HIDE_RECENTS, false);
-        mHideRecents.setChecked(checked);
+                mContext.getContentResolver(),Settings.System.NAVBAR_SHOW_RECENTS, false);
+        mShowRecents.setChecked(checked);
     }
 
     @Override
@@ -154,6 +161,10 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
         if(preference==mImmersiveStatusbar){
             boolean checked=mImmersiveStatusbar.isChecked();
             Settings.System.putBoolean(getContentResolver(), Settings.System.IMMERSIVE_MODE_SB, checked);
+        }
+        if(preference==mEnableHeadsUp) {
+            boolean checked = mEnableHeadsUp.isChecked();
+            Settings.System.putBoolean(getContentResolver(), Settings.System.ENABLE_HEADS_UP, checked);
         }
         if(preference==mVolumeUp){
             boolean checked=mVolumeUp.isChecked();
@@ -199,17 +210,17 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
             boolean checked=mMediaPrev.isChecked();
             Settings.System.putBoolean(getContentResolver(), Settings.System.NAVBAR_SHOW_MEDIA_PREV, checked);
         }
-        if(preference==mHideBack){
-            boolean checked=mHideBack.isChecked();
-            Settings.System.putBoolean(getContentResolver(), Settings.System.NAVBAR_HIDE_BACK, checked);
+        if(preference==mShowBack){
+            boolean checked=mShowBack.isChecked();
+            Settings.System.putBoolean(getContentResolver(), Settings.System.NAVBAR_SHOW_BACK, checked);
         }
-        if(preference==mHideHome){
-            boolean checked=mHideHome.isChecked();
-            Settings.System.putBoolean(getContentResolver(), Settings.System.NAVBAR_HIDE_HOME, checked);
+        if(preference==mShowHome){
+            boolean checked=mShowHome.isChecked();
+            Settings.System.putBoolean(getContentResolver(), Settings.System.NAVBAR_SHOW_HOME, checked);
         }
-        if(preference==mHideRecents){
-            boolean checked=mHideRecents.isChecked();
-            Settings.System.putBoolean(getContentResolver(), Settings.System.NAVBAR_HIDE_RECENTS, checked);
+        if(preference==mShowRecents){
+            boolean checked=mShowRecents.isChecked();
+            Settings.System.putBoolean(getContentResolver(), Settings.System.NAVBAR_SHOW_RECENTS, checked);
         }
 		return true;
 	}

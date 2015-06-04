@@ -1,70 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
 
-    <CheckBoxPreference
-        android:key="immersive_nav"
-        android:title="@string/immersive_nav"
-        />
+    <PreferenceCategory
+        android:key="interface_settings"
+        android:title="@string/interface_settings">
 
-    <CheckBoxPreference
-        android:key="immersive_sb"
-        android:title="@string/immersive_sb"
-        />
+        <CheckBoxPreference
+            android:key="immersive_nav"
+            android:title="@string/immersive_nav" />
 
-    <CheckBoxPreference
-        android:key="volume_up"
-        android:title="@string/volume_up"
-        />
-    <CheckBoxPreference
-        android:key="volume_down"
-        android:title="@string/volume_down"
-        />
-    <CheckBoxPreference
-        android:key="volume_slider"
-        android:title="@string/volume_slider"
-        />
-    <CheckBoxPreference
-        android:key="music_button"
-        android:title="@string/music_button"
-        />
-    <CheckBoxPreference
-        android:key="home_clock_button"
-        android:title="@string/home_clock_button"
-        />
-    <CheckBoxPreference
-        android:key="navigation_button"
-        android:title="@string/navigation_button"
-        />
-    <CheckBoxPreference
-        android:key="phone_button"
-        android:title="@string/phone_button"
-        />
-    <CheckBoxPreference
-        android:key="automotive_button"
-        android:title="@string/automotive_button"
-        />
-    <CheckBoxPreference
-        android:key="media_prev_button"
-        android:title="@string/media_prev_button"
-        />
-    <CheckBoxPreference
-        android:key="media_play_button"
-        android:title="@string/media_play_button"
-        />
-    <CheckBoxPreference
-        android:key="media_next_button"
-        android:title="@string/media_next_button"
-        />
-    <CheckBoxPreference
-        android:key="hide_back_button"
-        android:title="@string/hide_back_button"
-        />
-    <CheckBoxPreference
-        android:key="hide_home_button"
-        android:title="@string/hide_home_button"
-        />
-    <CheckBoxPreference
-        android:key="hide_recents_button"
-        android:title="@string/hide_recents_button"
-        />
+        <CheckBoxPreference
+            android:key="immersive_sb"
+            android:title="@string/immersive_sb" />
+
+        <CheckBoxPreference
+            android:key="enable_heads_up"
+            android:title="@string/enable_heads_up" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="navigation_buttons"
+        android:title="@string/navigation_buttons" >
+
+        <CheckBoxPreference
+            android:key="volume_up"
+            android:title="@string/volume_up"
+            />
+        <CheckBoxPreference
+            android:key="volume_down"
+            android:title="@string/volume_down"
+            />
+        <CheckBoxPreference
+            android:key="volume_slider"
+            android:title="@string/volume_slider"
+            />
+        <CheckBoxPreference
+            android:key="music_button"
+            android:title="@string/music_button"
+            />
+        <CheckBoxPreference
+            android:key="home_clock_button"
+            android:title="@string/home_clock_button"
+            />
+        <CheckBoxPreference
+            android:key="navigation_button"
+            android:title="@string/navigation_button"
+            />
+        <CheckBoxPreference
+            android:key="phone_button"
+            android:title="@string/phone_button"
+            />
+        <CheckBoxPreference
+            android:key="automotive_button"
+            android:title="@string/automotive_button"
+            />
+        <CheckBoxPreference
+            android:key="media_prev_button"
+            android:title="@string/media_prev_button"
+            />
+        <CheckBoxPreference
+            android:key="media_play_button"
+            android:title="@string/media_play_button"
+            />
+        <CheckBoxPreference
+            android:key="media_next_button"
+            android:title="@string/media_next_button"
+            />
+        <CheckBoxPreference
+            android:key="show_back_button"
+            android:title="@string/show_back_button"
+            />
+        <CheckBoxPreference
+            android:key="show_home_button"
+            android:title="@string/show_home_button"
+            />
+        <CheckBoxPreference
+            android:key="show_recents_button"
+            android:title="@string/show_recents_button"
+            />
+    </PreferenceCategory>
 </PreferenceScreen>

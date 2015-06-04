@@ -5028,7 +5028,10 @@
     <string name="media_prev_button">"Show Media/Prev Button"</string>
     <string name="media_play_button">"Show Media/Play Button"</string>
     <string name="media_next_button">"Show Media/Next Button"</string>
-    <string name="hide_home_button">"Hide Stock Home Button"</string>
-    <string name="hide_back_button">"Hide Stock Back Button"</string>
-    <string name="hide_recents_button">"Hide Stock Recents Button"</string>
+    <string name="show_home_button">"Show Stock Home Button"</string>
+    <string name="show_back_button">"Show Stock Back Button"</string>
+    <string name="show_recents_button">"Show Stock Recents Button"</string>
+    <string name="enable_heads_up">Enable Heads Up Notifications</string>
+    <string name="interface_settings">Interface Settings</string>
+    <string name="navigation_buttons">Navigation Buttons</string>
 </resources>
