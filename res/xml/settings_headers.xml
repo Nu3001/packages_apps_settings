@@ -83,11 +83,18 @@
         android:fragment="com.android.settings.DisplaySettings"
         android:title="@string/display_settings" />
     <!-- User Interface -->
+    <!-- Status Bar -->
     <header
-        android:id="@+id/ui_settings"
-        android:icon="@drawable/ic_settings_multiuser"
-        android:fragment="com.android.settings.UserInterface"
-        android:title="@string/ui_settings" />
+        android:id="@+id/ui_statusbar"
+        android:icon="@drawable/statusbar"
+        android:fragment="com.android.settings.StatusBar"
+        android:title="@string/status_bar_settings" />
+    <!-- Navigation Bar -->
+    <header
+        android:id="@+id/ui_navbar"
+        android:icon="@drawable/navbar"
+        android:fragment="com.android.settings.NavigationBar"
+        android:title="@string/nav_bar_settings" />
     <!--HDMI-->
     <header
 	    android:id="@+id/hdmi_settings"

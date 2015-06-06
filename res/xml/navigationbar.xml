@@ -9,14 +9,6 @@
             android:key="immersive_nav"
             android:title="@string/immersive_nav" />
 
-        <CheckBoxPreference
-            android:key="immersive_sb"
-            android:title="@string/immersive_sb" />
-
-        <CheckBoxPreference
-            android:key="enable_heads_up"
-            android:title="@string/enable_heads_up" />
-
     </PreferenceCategory>
 
     <PreferenceCategory

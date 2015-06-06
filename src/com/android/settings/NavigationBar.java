@@ -8,11 +8,10 @@ import android.preference.PreferenceScreen;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.provider.Settings;
 
-public class UserInterface extends SettingsPreferenceFragment implements OnPreferenceChangeListener{
+public class NavigationBar extends SettingsPreferenceFragment implements OnPreferenceChangeListener{
 	 /** Called when the activity is first created. */
 
     private static final String KEY_IMMERSIVE_NAV="immersive_nav";
-    private static final String KEY_IMMERSIVE_SB="immersive_sb";
     private static final String KEY_VOLUME_UP="volume_up";
     private static final String KEY_VOLUME_DOWN="volume_down";
     private static final String KEY_VOLUME_SLIDER="volume_slider";
@@ -27,12 +26,8 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
     private static final String KEY_SHOW_BACK_BUTTON="show_back_button";
     private static final String KEY_SHOW_HOME_BUTTON="show_home_button";
     private static final String KEY_SHOW_RECENTS_BUTTON="show_recents_button";
-    private static final String KEY_ENABLE_HEADS_UP="enable_heads_up";
 
-
-	private CheckBoxPreference mImmersiveStatusbar;
     private CheckBoxPreference mImmersiveNavbar;
-    private CheckBoxPreference mEnableHeadsUp;
     private CheckBoxPreference mVolumeUp;
     private CheckBoxPreference mVolumeDown;
     private CheckBoxPreference mVolumeSlider;
@@ -53,12 +48,10 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.userinterface);
+        addPreferencesFromResource(R.xml.navigationbar);
         
         mContext=getActivity();
         mImmersiveNavbar=(CheckBoxPreference)findPreference(KEY_IMMERSIVE_NAV);
-        mImmersiveStatusbar=(CheckBoxPreference)findPreference(KEY_IMMERSIVE_SB);
-        mEnableHeadsUp=(CheckBoxPreference)findPreference(KEY_ENABLE_HEADS_UP);
         mVolumeUp=(CheckBoxPreference)findPreference(KEY_VOLUME_UP);
         mVolumeDown=(CheckBoxPreference)findPreference(KEY_VOLUME_DOWN);
         mVolumeSlider=(CheckBoxPreference)findPreference(KEY_VOLUME_SLIDER);
@@ -75,8 +68,6 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
         mShowRecents=(CheckBoxPreference)findPreference(KEY_SHOW_RECENTS_BUTTON);
         
         mImmersiveNavbar.setOnPreferenceChangeListener(this);
-        mImmersiveStatusbar.setOnPreferenceChangeListener(this);
-        mEnableHeadsUp.setOnPreferenceChangeListener(this);
         mVolumeUp.setOnPreferenceChangeListener(this);
         mVolumeDown.setOnPreferenceChangeListener(this);
         mVolumeSlider.setOnPreferenceChangeListener(this);
@@ -95,12 +86,6 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
         boolean checked = Settings.System.getBoolean(
              mContext.getContentResolver(),Settings.System.IMMERSIVE_MODE_NAV, false);
         mImmersiveNavbar.setChecked(checked);
-        checked = Settings.System.getBoolean(
-                mContext.getContentResolver(),Settings.System.IMMERSIVE_MODE_SB, false);
-        mImmersiveStatusbar.setChecked(checked);
-        checked = Settings.System.getBoolean(
-                mContext.getContentResolver(),Settings.System.ENABLE_HEADS_UP, false);
-        mEnableHeadsUp.setChecked(checked);
         checked = Settings.System.getBoolean(
                 mContext.getContentResolver(),Settings.System.NAVBAR_SHOW_VOLUME_UP, false);
         mVolumeUp.setChecked(checked);
@@ -158,14 +143,6 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
 			boolean checked=mImmersiveNavbar.isChecked();
 			Settings.System.putBoolean(getContentResolver(), Settings.System.IMMERSIVE_MODE_NAV, checked);
 		}
-        if(preference==mImmersiveStatusbar){
-            boolean checked=mImmersiveStatusbar.isChecked();
-            Settings.System.putBoolean(getContentResolver(), Settings.System.IMMERSIVE_MODE_SB, checked);
-        }
-        if(preference==mEnableHeadsUp) {
-            boolean checked = mEnableHeadsUp.isChecked();
-            Settings.System.putBoolean(getContentResolver(), Settings.System.ENABLE_HEADS_UP, checked);
-        }
         if(preference==mVolumeUp){
             boolean checked=mVolumeUp.isChecked();
             Settings.System.putBoolean(getContentResolver(), Settings.System.NAVBAR_SHOW_VOLUME_UP, checked);

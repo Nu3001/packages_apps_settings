@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory
+        android:key="interface_settings"
+        android:title="@string/interface_settings" >
+
+        <CheckBoxPreference
+            android:key="immersive_sb"
+            android:title="@string/immersive_sb" />
+
+        <CheckBoxPreference
+            android:key="enable_heads_up"
+            android:title="@string/enable_heads_up" />
+
+    </PreferenceCategory>
+</PreferenceScreen>

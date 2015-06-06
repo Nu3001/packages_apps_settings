@@ -5014,7 +5014,8 @@
      <string name="dlg_confirm_reboot_title">Reboot</string>
      <string name="dlg_confirm_reboot_text">System will reboot to change display mode.</string>
 
-    <string name="ui_settings">"User Interface"</string>
+    <string name="nav_bar_settings">"Navigation Bar"</string>
+    <string name="status_bar_settings">"Status Bar"</string>
     <string name="immersive_nav">"Immersive Mode (Navbar)"</string>
     <string name="immersive_sb">"Immersive Mode (Statusbar)"</string>
     <string name="volume_up">"Show Volume Up Button"</string>
