@@ -13,5 +13,8 @@
             android:key="enable_heads_up"
             android:title="@string/enable_heads_up" />
 
+        <CheckBoxPreference
+            android:key="media_statusbar"
+            android:title="@string/media_statusbar" />
     </PreferenceCategory>
 </PreferenceScreen>

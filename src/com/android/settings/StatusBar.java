@@ -13,10 +13,12 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
 
     private static final String KEY_IMMERSIVE_SB="immersive_sb";
     private static final String KEY_ENABLE_HEADS_UP="enable_heads_up";
+    private static final String KEY_MEDIA_STATUSBAR="media_statusbar";
 
 
 	private CheckBoxPreference mImmersiveStatusbar;
     private CheckBoxPreference mEnableHeadsUp;
+    private CheckBoxPreference mMediaStatusbar;
 
 	private Context mContext;
 
@@ -28,6 +30,7 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
         mContext=getActivity();
         mImmersiveStatusbar=(CheckBoxPreference)findPreference(KEY_IMMERSIVE_SB);
         mEnableHeadsUp=(CheckBoxPreference)findPreference(KEY_ENABLE_HEADS_UP);
+        mMediaStatusbar = (CheckBoxPreference)findPreference(KEY_MEDIA_STATUSBAR);
 
         mImmersiveStatusbar.setOnPreferenceChangeListener(this);
         mEnableHeadsUp.setOnPreferenceChangeListener(this);
@@ -38,6 +41,9 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
         checked = Settings.System.getBoolean(
                 mContext.getContentResolver(),Settings.System.ENABLE_HEADS_UP, false);
         mEnableHeadsUp.setChecked(checked);
+        checked = Settings.System.getBoolean(
+                mContext.getContentResolver(),Settings.System.ENABLE_STATUSBAR_MEDIA, false);
+        mMediaStatusbar.setChecked(checked);
 
     }
 
@@ -57,6 +63,10 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
         if(preference==mEnableHeadsUp) {
             boolean checked = mEnableHeadsUp.isChecked();
             Settings.System.putBoolean(getContentResolver(), Settings.System.ENABLE_HEADS_UP, checked);
+        }
+        if(preference==mMediaStatusbar) {
+            boolean checked = mMediaStatusbar.isChecked();
+            Settings.System.putBoolean(getContentResolver(), Settings.System.ENABLE_STATUSBAR_MEDIA, checked);
         }
 		return true;
 	}
