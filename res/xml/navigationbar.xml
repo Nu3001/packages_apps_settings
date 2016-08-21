@@ -8,6 +8,9 @@
         <CheckBoxPreference
             android:key="immersive_nav"
             android:title="@string/immersive_nav" />
+        <CheckBoxPreference
+            android:key="rightside_nav"
+            android:title="@string/rightside_nav" />
 
     </PreferenceCategory>
 
