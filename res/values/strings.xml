@@ -5018,6 +5018,7 @@
     <string name="status_bar_settings">"Status Bar"</string>
     <string name="immersive_nav">"Immersive Mode (Navbar)"</string>
     <string name="rightside_nav">"Enable Navbar on Right"</string>
+    <string name="leftside_nav">"Enable Navbar on Left"</string>
     <string name="immersive_sb">"Immersive Mode (Statusbar)"</string>
     <string name="media_statusbar">Media display in Statusbar</string>
     <string name="volume_up">"Show Volume Up Button"</string>

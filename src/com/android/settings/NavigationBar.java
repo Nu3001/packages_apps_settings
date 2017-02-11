@@ -13,6 +13,7 @@ public class NavigationBar extends SettingsPreferenceFragment implements OnPrefe
 
     private static final String KEY_IMMERSIVE_NAV="immersive_nav";
     private static final String KEY_RIGHTSIDE_NAV="rightside_nav";
+    private static final String KEY_LEFTSIDE_NAV="leftside_nav";
     private static final String KEY_VOLUME_UP="volume_up";
     private static final String KEY_VOLUME_DOWN="volume_down";
     private static final String KEY_VOLUME_SLIDER="volume_slider";
@@ -30,6 +31,7 @@ public class NavigationBar extends SettingsPreferenceFragment implements OnPrefe
 
     private CheckBoxPreference mImmersiveNavbar;
     private CheckBoxPreference mRightsideNavbar;
+    private CheckBoxPreference mLeftsideNavbar;
     private CheckBoxPreference mVolumeUp;
     private CheckBoxPreference mVolumeDown;
     private CheckBoxPreference mVolumeSlider;
@@ -55,6 +57,7 @@ public class NavigationBar extends SettingsPreferenceFragment implements OnPrefe
         mContext=getActivity();
         mImmersiveNavbar=(CheckBoxPreference)findPreference(KEY_IMMERSIVE_NAV);
         mRightsideNavbar=(CheckBoxPreference)findPreference(KEY_RIGHTSIDE_NAV);
+        mLeftsideNavbar=(CheckBoxPreference)findPreference(KEY_LEFTSIDE_NAV);
         mVolumeUp=(CheckBoxPreference)findPreference(KEY_VOLUME_UP);
         mVolumeDown=(CheckBoxPreference)findPreference(KEY_VOLUME_DOWN);
         mVolumeSlider=(CheckBoxPreference)findPreference(KEY_VOLUME_SLIDER);
@@ -72,6 +75,7 @@ public class NavigationBar extends SettingsPreferenceFragment implements OnPrefe
         
         mImmersiveNavbar.setOnPreferenceChangeListener(this);
         mRightsideNavbar.setOnPreferenceChangeListener(this);
+        mLeftsideNavbar.setOnPreferenceChangeListener(this);
         mVolumeUp.setOnPreferenceChangeListener(this);
         mVolumeDown.setOnPreferenceChangeListener(this);
         mVolumeSlider.setOnPreferenceChangeListener(this);
@@ -93,6 +97,9 @@ public class NavigationBar extends SettingsPreferenceFragment implements OnPrefe
         checked = Settings.System.getBoolean(
                 mContext.getContentResolver(),Settings.System.ENABLE_RIGHT_NAVBAR, false);
         mRightsideNavbar.setChecked(checked);
+        checked = Settings.System.getBoolean(
+                mContext.getContentResolver(),Settings.System.ENABLE_LEFT_NAVBAR, false);
+        mLeftsideNavbar.setChecked(checked);
         checked = Settings.System.getBoolean(
                 mContext.getContentResolver(),Settings.System.NAVBAR_SHOW_VOLUME_UP, false);
         mVolumeUp.setChecked(checked);
@@ -153,6 +160,18 @@ public class NavigationBar extends SettingsPreferenceFragment implements OnPrefe
         if(preference==mRightsideNavbar){
             boolean checked=mRightsideNavbar.isChecked();
             Settings.System.putBoolean(getContentResolver(), Settings.System.ENABLE_RIGHT_NAVBAR, checked);
+            if (checked) {
+                mLeftsideNavbar.setChecked(false);
+                Settings.System.putBoolean(getContentResolver(), Settings.System.ENABLE_LEFT_NAVBAR, false);
+            }
+        }
+        if(preference==mLeftsideNavbar){
+            boolean checked=mLeftsideNavbar.isChecked();
+            Settings.System.putBoolean(getContentResolver(), Settings.System.ENABLE_LEFT_NAVBAR, checked);
+            if (checked) {
+                mRightsideNavbar.setChecked(false);
+                Settings.System.putBoolean(getContentResolver(), Settings.System.ENABLE_RIGHT_NAVBAR, false);
+            }
         }
         if(preference==mVolumeUp){
             boolean checked=mVolumeUp.isChecked();

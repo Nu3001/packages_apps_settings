@@ -11,6 +11,9 @@
         <CheckBoxPreference
             android:key="rightside_nav"
             android:title="@string/rightside_nav" />
+        <CheckBoxPreference
+            android:key="leftside_nav"
+            android:title="@string/leftside_nav" />
 
     </PreferenceCategory>
 
